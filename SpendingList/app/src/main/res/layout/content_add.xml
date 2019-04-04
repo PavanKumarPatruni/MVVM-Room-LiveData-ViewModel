@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".add.AddActivity"
+    tools:showIn="@layout/activity_add">
+
+    <EditText
+        android:id="@+id/editTextSpentFor"
+        style="@style/CustomEditText"
+        android:layout_width="@dimen/dp_zero"
+        android:layout_height="wrap_content"
+        android:hint="@string/spentFor"
+        android:inputType="textPersonName"
+        android:textSize="@dimen/sp_eighteen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextSpentMoney"
+        style="@style/CustomEditText"
+        android:layout_width="@dimen/dp_zero"
+        android:layout_height="wrap_content"
+        android:hint="@string/spentMoney"
+        android:inputType="number"
+        android:textSize="@dimen/sp_eighteen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSpentFor" />
+
+    <Button
+        android:id="@+id/buttonSelectDate"
+        style="@style/CustomButton"
+        android:layout_width="@dimen/dp_zero"
+        android:layout_height="@dimen/dp_fifty"
+        android:text="@string/select_date"
+        app:layout_constraintEnd_toStartOf="@+id/textViewOR"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSpentMoney" />
+
+    <Button
+        android:id="@+id/buttonCurrentDate"
+        style="@style/CustomButton"
+        android:layout_width="@dimen/dp_zero"
+        android:layout_height="@dimen/dp_fifty"
+        android:text="@string/current_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textViewOR"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSpentMoney" />
+
+    <TextView
+        android:id="@+id/textViewOR"
+        android:layout_width="@dimen/dp_fifty"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_eight"
+        android:gravity="center"
+        android:text="@string/or"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSelectDate"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCurrentDate"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonSelectDate"
+        app:layout_constraintTop_toTopOf="@+id/buttonSelectDate" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_eight"
+    app:cardCornerRadius="@dimen/dp_five">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_sixteen">
+
+        <TextView
+            android:id="@+id/textViewSpentFor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spentFor"
+            android:textStyle="bold"
+            android:textSize="@dimen/sp_eighteen" />
+
+        <TextView
+            android:id="@+id/textViewSpentMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textViewSpentFor"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/spentMoney"
+            android:textSize="@dimen/sp_eighteen"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewSpentFor"
+            android:layout_marginTop="@dimen/dp_eight"
+            android:text="@string/date"
+            android:textSize="@dimen/sp_ten" />
+
+        <ImageView
+            android:id="@+id/imageViewDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textViewSpentFor"
+            android:layout_marginTop="@dimen/dp_eight"
+            android:layout_alignParentRight="true"
+            app:srcCompat="@drawable/ic_delete_black_24dp"
+            tools:ignore="VectorDrawableCompat" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
