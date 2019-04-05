@@ -37,16 +37,4 @@ public class SpendingModel {
         return spentDate;
     }
 
-    public void setSpentFor(String spentFor) {
-        this.spentFor = spentFor;
-    }
-
-    public void setSpentMoney(long spentMoney) {
-        this.spentMoney = spentMoney;
-    }
-
-    public void setSpentDate(Date spentDate) {
-        this.spentDate = spentDate;
-    }
-
 }
