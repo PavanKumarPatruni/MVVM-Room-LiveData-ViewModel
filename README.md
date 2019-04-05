@@ -1,2 +1,2 @@
-# Spending-List-Room-Live-Data-ViewModel-
-Spending List (Room, Live Data, ViewModel)
+# MVVM (Room, LiveData, ViewModel)
+Spending List Example
