@@ -1,42 +1,34 @@
-package com.pavankumarpatruni.spendinglist.add;
+package com.pavankumarpatruni.spendinglist.main;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
 import com.pavankumarpatruni.spendinglist.roomDB.AppDatabase;
 import com.pavankumarpatruni.spendinglist.roomDB.SpendingModel;
+import com.pavankumarpatruni.spendinglist.roomDB.SpendingsRepository;
 
-public class AddSpendingViewModel extends AndroidViewModel {
+import java.util.List;
 
-    private AppDatabase appDatabase;
+public class ListSpendingViewModel extends AndroidViewModel {
 
-    public AddSpendingViewModel(@NonNull Application application) {
+    private SpendingsRepository spendingsRepository;
+
+    public ListSpendingViewModel(@NonNull Application application) {
         super(application);
 
-        appDatabase = AppDatabase.getDatabase(this.getApplication());
+        spendingsRepository = new SpendingsRepository(application);
 
     }
 
-    public void addSpending(SpendingModel spendingModel) {
-        new addAsyncTask(appDatabase).execute(spendingModel);
+    public LiveData<List<SpendingModel>> getItemAndPersonList() {
+        return spendingsRepository.getItemAndPersonList();
     }
 
-    private static class addAsyncTask extends AsyncTask<SpendingModel, Void, Void> {
-
-        private AppDatabase db;
-
-        addAsyncTask(AppDatabase appDatabase) {
-            db = appDatabase;
-        }
-
-        @Override
-        protected Void doInBackground(final SpendingModel... params) {
-            db.getSpendingModel().addSpending(params[0]);
-            return null;
-        }
-
+    public void deleteItem(SpendingModel spendingModel) {
+        spendingsRepository.deleteItem(spendingModel);
     }
 
 }
