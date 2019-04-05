@@ -18,9 +18,6 @@ public interface SpendingModelDao {
     @Query("select * from SpendingModel")
     LiveData<List<SpendingModel>> getSpendingList();
 
-    @Query("select * from SpendingModel where id = :id")
-    SpendingModel getSpendingById(String id);
-
     @Insert(onConflict = REPLACE)
     void addSpending(SpendingModel spendingModel);
 
